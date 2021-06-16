@@ -14,7 +14,7 @@ body {
 header {
   background-color: var(--white);
   width: calc(100vw - 40px);
-  height: 80px;
+  height:64px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -47,10 +47,14 @@ header .right-elements img {
   filter: invert(14%) sepia(8%) saturate(2740%) hue-rotate(197deg) brightness(97%) contrast(87%);
 }
 
+header .right-elements img:last-of-type {
+  margin-right: 0px;
+}
+
 header .right-elements h2 {
   transition: .2s linear;
   color: var(--black);
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 600;
   cursor: pointer;
   margin-right: clamp(8px, 2vw, 24px);
