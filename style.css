@@ -7,71 +7,71 @@
 body {
   margin: 0 0;
   padding: 0 0;
-  background-color: black;
+  background-color: var(--black);
   font-family: 'Montserrat', sans-serif;
 }
 
-header {
-  background-color: var(--white);
-  width: calc(100vw - 40px);
-  height:64px;
+.box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90vw;
+  height: 90vh;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.box-header {
+  width: 90%;
+  height: 10%;
+  padding: 0 5%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px 20px;
-  right: 0px;
-  position: fixed;
 }
 
-header img {
-  width: auto;
-  height: 70%;
-}
-
-header .right-elements {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-header .right-elements img {
-  transition: .2s linear;
+.box-header-child {
+  background: #39313F;
+  box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px -3px 4px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: 6px #612c29 solid;
+  width: 12%;
+  height: calc(100% - 12px);
+  bottom: -12%;
+  position: relative;
+  margin-right: 16px;
   cursor: pointer;
-  width: auto;
-  height: 30%;
-  margin-right: clamp(8px, 1.5vw, 16px);
-  filter: invert(14%) sepia(8%) saturate(2740%) hue-rotate(197deg) brightness(97%) contrast(87%);
+  color: #f7f7f7;
 }
 
-header .right-elements img:last-of-type {
+.box-header-child:last-of-type {
   margin-right: 0px;
 }
 
-header .right-elements h2 {
-  transition: .2s linear;
-  color: var(--black);
-  font-size: 1.1em;
+.box-header-child:hover {
+  background: #e74c3c;
+  color: #EAEAEA;
+}
+
+.box-header-child:active {
+  background: #c0392b;
+  color: #EAEAEA;
+}
+
+.box-header-child p {
   font-weight: 600;
-  cursor: pointer;
-  margin-right: clamp(8px, 2vw, 24px);
-}
-
-header .right-elements h2:hover {
-  color: var(--primary);
-}
-
-header .right-elements img:hover {
-  filter: invert(52%) sepia(43%) saturate(6699%) hue-rotate(218deg) brightness(93%) contrast(119%)
-}
-
-header .right-elements .social {
-  display: flex;
-  flex-direction: row;
+  text-align: center;
+  width: 100%;
   height: 100%;
-  align-items: center;
-  justify-content: space-between;
+}
+
+.box-content {
+  background: #532727;
+  box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px -3px 4px -5px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: 12px #612c29 solid;
+  width: calc(100% - 24px);
+  height: calc(90% - 24px);
 }
