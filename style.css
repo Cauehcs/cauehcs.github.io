@@ -56,7 +56,8 @@ body {
   color: #EAEAEA;
 }
 
-.box-header-child:active {
+.box-header-child:active, 
+.box-header-child#active-tab-header {
   background: #c0392b;
   color: #EAEAEA;
 }
@@ -79,4 +80,14 @@ body {
   border: 12px #612c29 solid;
   width: calc(100% - 24px);
   height: calc(90% - 24px);
+}
+
+.box-content-child {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.box-content-child#active-tab-content {
+  display: block;
 }
