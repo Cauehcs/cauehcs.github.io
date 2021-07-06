@@ -23,13 +23,17 @@ body {
 }
 
 .box-header {
-  width: 90%;
+  width: 80%;
   height: 10%;
-  padding: 0 5%;
+  padding: 0 10%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  -webkit-user-select: none;  
+  -moz-user-select: none;     
+  -ms-user-select: none;      
+  user-select: none;  
 }
 
 .box-header-child {
@@ -37,14 +41,17 @@ body {
   box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px -3px 4px -5px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   border: 6px #612c29 solid;
-  width: 12%;
+  flex-grow: 1;
   height: calc(100% - 12px);
-  bottom: -12%;
+  bottom: -15%;
+  max-width: 150px;
   position: relative;
   margin-right: 16px;
   cursor: pointer;
   color: rgba(247, 247, 247, .5);
   text-transform: capitalize;
+  transition: .2s;
+  z-index: 1;
 }
 
 .box-header-child:last-of-type {
@@ -52,14 +59,40 @@ body {
 }
 
 .box-header-child:hover {
-  background: #e74c3c;
-  color: #EAEAEA;
+  transform: translateY(-5px);
+  height: 110%;
+  /* background: #e74c3c; */
+  /* color: #EAEAEA; */
 }
 
-.box-header-child:active, 
 .box-header-child#active-tab-header {
-  background: #c0392b;
-  color: #EAEAEA;
+  animation: .5s animation-select-tab-header ease-in-out forwards;
+}
+
+.box-header-child#inactive-tab-header {
+  animation: .5s animation-unselect-tab-header ease-in-out forwards;
+}
+
+@keyframes animation-select-tab-header {
+  50% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+    color: #EAEAEA;
+    background: #c0392b;
+  }
+}
+
+@keyframes animation-unselect-tab-header {
+  50% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+    color: rgba(247, 247, 247, .5);
+    background: #39313F;
+  }
 }
 
 .box-header-child p {
@@ -69,7 +102,7 @@ body {
   transform: translate(-50%, -50%);
   font-weight: 600;
   text-align: center;
-  font-size: 1.3vw;
+  font-size: 2vw;
   margin: 0 0;
 }
 
@@ -80,6 +113,7 @@ body {
   border: 12px #612c29 solid;
   width: calc(100% - 24px);
   height: calc(90% - 24px);
+  z-index: 2;
 }
 
 .box-content-child {
